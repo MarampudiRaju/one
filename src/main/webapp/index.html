@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Raju | Software & DevOps Engineer</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0b1120;
+            color: #e5e7eb;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(11, 17, 32, 0.9);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #1f2937;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: auto;
+            height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 25px;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #38bdf8;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #cbd5e1;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #38bdf8;
+        }
+
+        .menu-btn {
+            display: none;
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 100vh;
+            max-width: 1200px;
+            margin: auto;
+            padding: 150px 25px 80px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .hero-content {
+            max-width: 650px;
+        }
+
+        .small-title {
+            color: #38bdf8;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 7vw, 72px);
+            line-height: 1.05;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #38bdf8;
+        }
+
+        .hero h2 {
+            font-size: 27px;
+            color: #94a3b8;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            color: #94a3b8;
+            font-size: 17px;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 13px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .primary {
+            background: #38bdf8;
+            color: #07111f;
+        }
+
+        .primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(56, 189, 248, 0.25);
+        }
+
+        .secondary {
+            border: 1px solid #334155;
+            color: #e2e8f0;
+        }
+
+        .secondary:hover {
+            border-color: #38bdf8;
+            color: #38bdf8;
+        }
+
+        /* ================= PROFILE ================= */
+
+        .profile {
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            border: 2px solid #38bdf8;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: #111827;
+            box-shadow: 0 0 70px rgba(56, 189, 248, 0.15);
+
+            flex-shrink: 0;
+        }
+
+        .profile-inner {
+            width: 270px;
+            height: 270px;
+            border-radius: 50%;
+            background: #1e293b;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 80px;
+        }
+
+        /* ================= COMMON ================= */
+
+        section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 100px 25px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #64748b;
+        }
+
+        /* ================= ABOUT ================= */
+
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text p {
+            color: #94a3b8;
+            margin-bottom: 15px;
+        }
+
+        .info-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .info {
+            padding: 20px;
+            background: #111827;
+            border: 1px solid #1f2937;
+            border-radius: 10px;
+        }
+
+        .info strong {
+            display: block;
+            color: #38bdf8;
+            margin-bottom: 5px;
+        }
+
+        .info span {
+            color: #cbd5e1;
+        }
+
+        /* ================= SKILLS ================= */
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: #111827;
+            border: 1px solid #1f2937;
+            padding: 25px;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-7px);
+            border-color: #38bdf8;
+        }
+
+        .skill-card h3 {
+            color: #38bdf8;
+            margin-bottom: 15px;
+        }
+
+        .skill-card p {
+            color: #94a3b8;
+        }
+
+        /* ================= EXPERIENCE ================= */
+
+        .timeline {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .timeline-item {
+            border-left: 2px solid #38bdf8;
+            padding: 0 0 40px 30px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: "";
+            width: 12px;
+            height: 12px;
+            background: #38bdf8;
+            border-radius: 50%;
+            position: absolute;
+            left: -7px;
+            top: 5px;
+        }
+
+        .timeline-item h3 {
+            font-size: 22px;
+        }
+
+        .timeline-item h4 {
+            color: #38bdf8;
+            margin: 5px 0;
+        }
+
+        .timeline-item span {
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        .timeline-item p {
+            color: #94a3b8;
+            margin-top: 10px;
+        }
+
+        /* ================= PROJECTS ================= */
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .project {
+            background: #111827;
+            border: 1px solid #1f2937;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .project:hover {
+            transform: translateY(-8px);
+            border-color: #38bdf8;
+        }
+
+        .project-top {
+            height: 140px;
+            background: linear-gradient(135deg, #0f172a, #164e63);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 45px;
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-content h3 {
+            margin-bottom: 10px;
+        }
+
+        .project-content p {
+            color: #94a3b8;
+            margin-bottom: 15px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            font-size: 12px;
+            background: #1e293b;
+            padding: 5px 10px;
+            border-radius: 20px;
+            color: #7dd3fc;
+        }
+
+        /* ================= EDUCATION ================= */
+
+        .education {
+            max-width: 800px;
+            margin: auto;
+            background: #111827;
+            border: 1px solid #1f2937;
+            padding: 30px;
+            border-radius: 12px;
+        }
+
+        .education h3 {
+            color: #38bdf8;
+        }
+
+        .education p {
+            color: #94a3b8;
+        }
+
+        /* ================= CONTACT ================= */
+
+        .contact-container {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        form {
+            display: grid;
+            gap: 15px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #334155;
+            background: #111827;
+            color: white;
+            outline: none;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: #38bdf8;
+        }
+
+        textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        form button {
+            border: none;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #94a3b8;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            border-top: 1px solid #1f2937;
+            padding: 30px;
+            text-align: center;
+            color: #64748b;
+        }
+
+        .socials {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .socials a {
+            color: #94a3b8;
+        }
+
+        .socials a:hover {
+            color: #38bdf8;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 900px) {
+
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                justify-content: center;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .profile {
+                width: 250px;
+                height: 250px;
+            }
+
+            .profile-inner {
+                width: 210px;
+                height: 210px;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+            }
+
+            .skills {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .projects {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: #0b1120;
+                flex-direction: column;
+                padding: 25px;
+                text-align: center;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .hero h2 {
+                font-size: 21px;
+            }
+
+            .skills {
+                grid-template-columns: 1fr;
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+            .info-box {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 70px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header>
+    <nav>
+
+        <div class="logo">
+            Raju.dev
+        </div>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <div class="menu-btn" onclick="toggleMenu()">
+            ☰
+        </div>
+
+    </nav>
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="small-title">
+            HELLO, I'M
+        </div>
+
+        <h1>
+            Raju <span>Rockzz</span>
+        </h1>
+
+        <h2>
+            Software & DevOps Engineer
+        </h2>
+
+        <p>
+            I build reliable applications and automate software delivery
+            using modern DevOps practices, cloud technologies and
+            continuous integration & deployment.
+        </p>
+
+        <div class="buttons">
+
+            <a href="#projects" class="btn primary">
+                View My Work
+            </a>
+
+            <a href="resume.pdf" class="btn secondary" download>
+                Download Resume
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="profile">
+
+        <div class="profile-inner">
+            👨‍💻
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+    <div class="section-title">
+
+        <h2>About Me</h2>
+
+        <p>
+            A little about my professional journey
+        </p>
+
+    </div>
+
+
+    <div class="about">
+
+        <div class="about-text">
+
+            <p>
+                I'm a passionate software and DevOps professional
+                interested in building scalable applications and
+                automating development and deployment processes.
+            </p>
+
+            <p>
+                I enjoy working with Linux, Git, Jenkins, Maven,
+                Docker, AWS and CI/CD pipelines.
+            </p>
+
+            <p>
+                My goal is to continuously learn new technologies
+                and contribute to engineering teams where I can
+                solve real-world problems.
+            </p>
+
+        </div>
+
+
+        <div class="info-box">
+
+            <div class="info">
+                <strong>Experience</strong>
+                <span>3+ Years</span>
+            </div>
+
+            <div class="info">
+                <strong>Location</strong>
+                <span>India</span>
+            </div>
+
+            <div class="info">
+                <strong>Specialization</strong>
+                <span>DevOps</span>
+            </div>
+
+            <div class="info">
+                <strong>Availability</strong>
+                <span>Open to Work</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SKILLS ================= -->
+
+<section id="skills">
+
+    <div class="section-title">
+
+        <h2>Technical Skills</h2>
+
+        <p>
+            Technologies I work with
+        </p>
+
+    </div>
+
+
+    <div class="skills">
+
+        <div class="skill-card">
+
+            <h3>Git & GitHub</h3>
+
+            <p>
+                Git, GitHub, branching, merging,
+                pull requests and version control.
+            </p>
+
+        </div>
+
+
+        <div class="skill-card">
+
+            <h3>CI/CD</h3>
+
+            <p>
+                Jenkins, Maven, automated builds,
+                testing and deployment pipelines.
+            </p>
+
+        </div>
+
+
+        <div class="skill-card">
+
+            <h3>Cloud</h3>
+
+            <p>
+                AWS EC2, IAM, S3, VPC and
+                cloud infrastructure fundamentals.
+            </p>
+
+        </div>
+
+
+        <div class="skill-card">
+
+            <h3>Containers</h3>
+
+            <p>
+                Docker, containerization,
+                images, registries and deployment.
+            </p>
+
+        </div>
+
+
+        <div class="skill-card">
+
+            <h3>Linux</h3>
+
+            <p>
+                Linux administration, shell commands,
+                permissions, processes and services.
+            </p>
+
+        </div>
+
+
+        <div class="skill-card">
+
+            <h3>Java</h3>
+
+            <p>
+                Java fundamentals, Maven,
+                web applications and WAR packaging.
+            </p>
+
+        </div>
+
+
+        <div class="skill-card">
+
+            <h3>Web</h3>
+
+            <p>
+                HTML, CSS, JavaScript and
+                responsive web development.
+            </p>
+
+        </div>
+
+
+        <div class="skill-card">
+
+            <h3>Automation</h3>
+
+            <p>
+                CI/CD automation, deployment
+                workflows and infrastructure practices.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= EXPERIENCE ================= -->
+
+<section id="experience">
+
+    <div class="section-title">
+
+        <h2>Experience</h2>
+
+        <p>
+            My professional journey
+        </p>
+
+    </div>
+
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+
+            <h3>DevOps Engineer</h3>
+
+            <h4>Company Name</h4>
+
+            <span>2024 – Present</span>
+
+            <p>
+                Managing CI/CD pipelines using Jenkins,
+                Git and Maven. Working with Linux servers,
+                deployment automation and AWS infrastructure.
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <h3>Software Engineer</h3>
+
+            <h4>Previous Company</h4>
+
+            <span>2022 – 2024</span>
+
+            <p>
+                Developed and supported enterprise applications,
+                performed deployments and collaborated with
+                development and operations teams.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PROJECTS ================= -->
+
+<section id="projects">
+
+    <div class="section-title">
+
+        <h2>Featured Projects</h2>
+
+        <p>
+            Some of my recent work
+        </p>
+
+    </div>
+
+
+    <div class="projects">
+
+        <div class="project">
+
+            <div class="project-top">
+                ⚙️
+            </div>
+
+            <div class="project-content">
+
+                <h3>CI/CD Pipeline</h3>
+
+                <p>
+                    Automated Java application build and
+                    deployment using Git, Jenkins and Maven.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">Jenkins</span>
+                    <span class="tag">Git</span>
+                    <span class="tag">Maven</span>
+                    <span class="tag">Linux</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="project">
+
+            <div class="project-top">
+                ☁️
+            </div>
+
+            <div class="project-content">
+
+                <h3>AWS Deployment</h3>
+
+                <p>
+                    Deployed a web application on AWS EC2
+                    with automated application delivery.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">AWS</span>
+                    <span class="tag">EC2</span>
+                    <span class="tag">Linux</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="project">
+
+            <div class="project-top">
+                🐳
+            </div>
+
+            <div class="project-content">
+
+                <h3>Dockerized Application</h3>
+
+                <p>
+                    Containerized a web application using
+                    Docker for consistent deployment.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">Docker</span>
+                    <span class="tag">Linux</span>
+                    <span class="tag">DevOps</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="project">
+
+            <div class="project-top">
+                🌐
+            </div>
+
+            <div class="project-content">
+
+                <h3>E-Commerce Website</h3>
+
+                <p>
+                    Responsive e-commerce website with
+                    modern UI and interactive components.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">JavaScript</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="project">
+
+            <div class="project-top">
+                💊
+            </div>
+
+            <div class="project-content">
+
+                <h3>E-Pharmacy Application</h3>
+
+                <p>
+                    Clean and responsive pharmacy application
+                    interface for browsing medicines and products.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">JavaScript</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="project">
+
+            <div class="project-top">
+                🔧
+            </div>
+
+            <div class="project-content">
+
+                <h3>Automation Project</h3>
+
+                <p>
+                    Automated repetitive deployment tasks
+                    using shell scripting and CI/CD tools.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">Shell</span>
+                    <span class="tag">Jenkins</span>
+                    <span class="tag">Linux</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= EDUCATION ================= -->
+
+<section>
+
+    <div class="section-title">
+
+        <h2>Education</h2>
+
+    </div>
+
+    <div class="education">
+
+        <h3>Bachelor's Degree</h3>
+
+        <p>
+            Computer Science / Engineering
+        </p>
+
+        <p>
+            University Name • 2018 – 2022
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+    <div class="section-title">
+
+        <h2>Let's Work Together</h2>
+
+        <p>
+            I'm currently open to new opportunities.
+        </p>
+
+    </div>
+
+
+    <div class="contact-container">
+
+        <div class="contact-info">
+
+            <p>
+                Have a project or job opportunity?
+                Feel free to get in touch.
+            </p>
+
+        </div>
+
+
+        <form onsubmit="sendMessage(event)">
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Your Name"
+                required
+            >
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Your Email"
+                required
+            >
+
+            <input
+                type="text"
+                id="subject"
+                placeholder="Subject"
+                required
+            >
+
+            <textarea
+                id="message"
+                placeholder="Your Message"
+                required
+            ></textarea>
+
+            <button class="btn primary" type="submit">
+                Send Message
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+        © 2026 Raju. All Rights Reserved.
+    </p>
+
+    <div class="socials">
+
+        <a href="https://github.com/" target="_blank">
+            GitHub
+        </a>
+
+        <a href="https://linkedin.com/" target="_blank">
+            LinkedIn
+        </a>
+
+        <a href="mailto:yourmail@example.com">
+            Email
+        </a>
+
+    </div>
+
+</footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+    function toggleMenu() {
+
+        const nav = document.getElementById("navLinks");
+
+        nav.classList.toggle("active");
+
+    }
+
+
+    function sendMessage(event) {
+
+        event.preventDefault();
+
+        const name =
+            document.getElementById("name").value;
+
+        const email =
+            document.getElementById("email").value;
+
+        const subject =
+            document.getElementById("subject").value;
+
+        const message =
+            document.getElementById("message").value;
+
+
+        const mailBody =
+            `Name: ${name}%0A` +
+            `Email: ${email}%0A%0A` +
+            `${message}`;
+
+
+        window.location.href =
+            `mailto:yourmail@example.com?subject=${encodeURIComponent(subject)}&body=${mailBody}`;
+
+    }
+
+</script>
+
+</body>
+</html>
